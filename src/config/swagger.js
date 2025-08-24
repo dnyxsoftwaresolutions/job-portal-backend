@@ -10,12 +10,15 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT || 3000}`,
+        url: `http://localhost:${process.env.PORT || 3000}`, // ✅ Local dev
+      },
+      {
+        url: 'https://job-portal-backend-1j1p.onrender.com', // ✅ Render deployment
       },
     ],
   },
-  // This is the correct path from the project root
-  apis: ['./src/routes/*.js'], 
+  // Path to your route files
+  apis: ['./src/routes/*.js'],
 };
 
 const specs = swaggerJsdoc(options);
